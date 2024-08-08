@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+    <style>
+        body {
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .task-grid,
+        .task-input-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 0.5fr 0.5fr;
+            column-gap: 10px;
+            row-gap: 10px;
+            align-items: center;
+        }
+        .task-input-grid {
+            margin-bottom: 10px;
+            align-items: stretch;
+        }
+        .name-input,
+        .due-date-input {
+            font-size: 15px;
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .add-task-button,
+        .delete-task-button,
+        .edit-task-button {
+            font-size: 15px;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+        .add-task-button {
+            background-color: green;
+            color: white;
+            border: none;
+        }
+        .delete-task-button {
+            background-color: darkred;
+            color: white;
+            border: none;
+        }
+        .edit-task-button {
+            background-color: #425fff;
+            color: white;
+            border: none;
+        }
+        .view-all-tasks-button {
+        background-color: #425fff;
+         color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+
+
+        .task-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr 0.5fr 0.5fr;
+            column-gap: 10px;
+            row-gap: 10px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p style="font-size: 24px; margin-bottom: 20px;">Task Tracker</p>
+        <div class="task-input-grid">
+            <input placeholder="Task name" class="js-name-input name-input">
+            <input type="date" class="js-due-date-input due-date-input">
+            <button onclick="addTask();" class="add-task-button">Add</button>
+            
+        </div>
+        <div class="js-task-list task-grid"></div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
